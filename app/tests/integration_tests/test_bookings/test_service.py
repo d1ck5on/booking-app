@@ -1,7 +1,8 @@
+from datetime import datetime
+
 import pytest
 
 from app.bookings.service import BookingService
-from datetime import datetime
 
 
 @pytest.mark.asyncio
@@ -10,7 +11,7 @@ async def test_add_and_get_booking():
         user_id=2,
         room_id=2,
         date_from=datetime.strptime("2023-07-10", "%Y-%m-%d"),
-        date_to=datetime.strptime("2023-07-24", "%Y-%m-%d")
+        date_to=datetime.strptime("2023-07-24", "%Y-%m-%d"),
     )
 
     assert new_booking.user_id == 2

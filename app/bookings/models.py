@@ -1,7 +1,9 @@
-from sqlalchemy import ForeignKey, Computed
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from app.database import Base, intpk
 from datetime import date
+
+from sqlalchemy import Computed, ForeignKey
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
+from app.database import Base, intpk
 
 
 class Bookings(Base):

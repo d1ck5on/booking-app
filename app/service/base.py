@@ -1,4 +1,5 @@
-from sqlalchemy import select, insert, delete
+from sqlalchemy import delete, insert, select
+
 from app.database import sessionmaker
 
 
@@ -25,14 +26,14 @@ class BaseService:
             query = select(cls.model).filter_by(**filters)
             result = await session.execute(query)
             return result.scalars().all()
-  
+
     @classmethod
     async def add(cls, **data):
         async with sessionmaker() as session:
             stmt = insert(cls.model).values(**data)
             await session.execute(stmt)
             await session.commit()
-    
+
     @classmethod
     async def delete(cls, **filter):
         async with sessionmaker() as session:

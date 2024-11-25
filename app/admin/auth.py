@@ -1,9 +1,7 @@
 from sqladmin import Admin
 from sqladmin.authentication import AuthenticationBackend
 from starlette.requests import Request
-from starlette.responses import RedirectResponse
 
-from app.exceptions import IncorrectEmailOrPasswordException
 from app.users.auth import authenticate_user, create_access_token
 from app.users.dependencies import get_current_user
 
