@@ -1,4 +1,5 @@
 .env
+.env-non-dev
 .venv/
 .pytest_cache/
 .mypy_cache/
